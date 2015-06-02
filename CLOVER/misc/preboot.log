@@ -1,0 +1,249 @@
+0:100  0:100  MemLog inited, TSC freq: 2494219846
+0:100  0:000  
+0:100  0:000  Now is 21.5.2015,  0:4:1 (GMT+2047)
+0:100  0:000  Starting Clover rev 2707 on American Megatrends EFI
+0:100  0:000  SelfDevicePath=PciRoot(0x0)\Pci(0x1D,0x0)\USB(0x1,0x0)\USB(0x3,0x0)\HD(1,GPT,A009420E-C3C5-4C39-8D7B-103505802A44,0x28,0x64000) @C7307718
+0:100  0:000  SelfDirPath = \EFI\BOOT
+0:102  0:001  UnicodeCollation Status=Success
+0:102  0:000  Total Memory Slots Count = 4
+0:102  0:000  Type 17 Index = 0
+0:102  0:000  SmbiosTable.Type17->Speed = 1600
+0:102  0:000  SmbiosTable.Type17->Size = 4096
+0:102  0:000  Type 17 Index = 1
+0:102  0:000  Ignoring insane frequency value 0MHz
+0:102  0:000  SmbiosTable.Type17->Speed = 0
+0:102  0:000  SmbiosTable.Type17->Size = 0
+0:102  0:000  Type 17 Index = 2
+0:102  0:000  SmbiosTable.Type17->Speed = 1600
+0:102  0:000  SmbiosTable.Type17->Size = 4096
+0:102  0:000  Type 17 Index = 3
+0:102  0:000  Ignoring insane frequency value 0MHz
+0:102  0:000  SmbiosTable.Type17->Speed = 0
+0:102  0:000  SmbiosTable.Type17->Size = 0
+0:102  0:000  Boot status=0
+0:102  0:000  Clover revision: 2707  running on N551JM
+0:102  0:000  ... with board N551JM
+0:102  0:000  Clover load options size = 4 bytes
+0:113  0:011  Using OEM config.plist at path: EFI\CLOVER\config.plist
+0:114  0:000  EFI\CLOVER\config.plist loaded: Success
+0:120  0:006  Found theme BLUEMAC
+0:130  0:009  Loading early settings
+0:130  0:000  timeout set to 15
+0:130  0:000  Default theme: bluemac
+0:130  0:000  Hiding entries with string \EFI\BOOT\BOOTX64.EFI
+0:130  0:000  LoadDrivers() start
+0:135  0:004  Loading DataHubDxe-64.efi
+0:145  0:009  Loading EmuVariableUefi-64.efi
+0:152  0:007  EmuVariableUefi Initialize: VariableCommonInitialize = Success, orig services stored, install gEmuVariableControlProtocolGuid = Success
+0:153  0:001  Loading FSInject-64.efi
+0:158  0:004  Loading OsxAptioFixDrv-64.efi
+0:165  0:007  Loading OsxFatBinaryDrv-64.efi
+0:169  0:004  Loading PartitionDxe-64.efi
+0:175  0:005   - driver needs connecting
+0:175  0:000  Loading VBoxHfs-64.efi
+0:182  0:006   - driver needs connecting
+0:182  0:000  Video bios patch requested or CustomEDID - forcing video reconnect
+0:182  0:000  3 drivers needs connecting ...
+0:182  0:000  PlatformDriverOverrideProtocol not found. Installing ... Success
+0:182  0:000  Partition driver loaded: CD disconnect Success
+0:182  0:000  Video driver loaded: disconnect Success
+0:545  0:363  Searching for invalid DiskIo BY_DRIVER connects: not found, all ok
+0:545  0:000  VideoBiosPatchNativeFromEdid:
+0:545  0:000   Bios: VideoBiosPatchInit(LegacyRegion = Success) = Success
+0:546  0:000   VideoBiosUnlock:  unlocked
+0:548  0:002   Patching: unknown - not patching
+0:548  0:000   VideoBiosLock: Success
+1:459  0:910  LoadDrivers() end
+1:459  0:000  EmuVariable InstallEmulation: orig vars copied, emu.var.services installed, CreateEvent VirtualAddressChange = Success, CreateEvent ExitBootServices = Success, set Status=Success
+1:463  0:004  SetScreenResolution: 1920x1080 - already set
+1:463  0:000  Console modes reported: 4, available modes:
+1:463  0:000    Mode 1: 80x25
+1:463  0:000    Mode 2: 80x50
+1:463  0:000    Mode 3: 100x31
+1:463  0:000    Mode 4: 240x56 (current mode)
+1:463  0:000  SetScreenResolution: 1920x1080 - already set
+1:463  0:000  reinit: self device path=PciRoot(0x0)\Pci(0x1D,0x0)\USB(0x1,0x0)\USB(0x3,0x0)\HD(1,GPT,A009420E-C3C5-4C39-8D7B-103505802A44,0x28,0x64000)
+1:463  0:000  new SelfHandle=C7307718
+1:464  0:001  CPU Vendor = 756E6547 Model=306C3
+1:464  0:000  The CPU supported turbo
+1:464  0:000  BrandString = Intel(R) Core(TM) i7-4710HQ CPU @ 2.50GHz
+1:464  0:000  MSR 0xE2 before patch 1E008405
+1:464  0:000  MSR 0xE2 is locked, PM patches will be turned on
+1:464  0:000  MSR 0xE4              00021814
+1:464  0:000  MSR 0xCE              00080838_F3011900
+1:464  0:000  non-usable FLEX_RATIO = 50000
+1:464  0:000  corrected FLEX_RATIO = 40000
+1:464  0:000  MSR 0x1B0             00000000
+1:464  0:000  FSBFrequency=100MHz
+1:464  0:000  Corrected FSBFrequency=100MHz
+1:464  0:000  Vendor/Model/Stepping: 0x756E6547/0x3C/0x3
+1:464  0:000  Family/ExtFamily: 0x6/0x0
+1:465  0:000  MaxDiv/MinDiv: 25.0/8
+1:465  0:000  Turbo: 33/33/34/35
+1:465  0:000  Features: 0xBFEBFBFF
+1:465  0:000  Threads: 8
+1:465  0:000  Cores: 4
+1:465  0:000  FSB: 100 MHz
+1:465  0:000  CPU: 2500 MHz
+1:465  0:000  TSC: 2500 MHz
+1:465  0:000  PIS: 400 MHz
+1:465  0:000  PCI (00|00:00.00) : 8086 0C04 class=060000
+1:465  0:000  PCI (00|00:01.00) : 8086 0C01 class=060400
+1:465  0:000  PCI (00|01:00.00) : 10DE 1392 class=030200
+1:465  0:000  PCI (00|00:02.00) : 8086 0416 class=030000
+1:465  0:000  Found GFX model=Intel HD Graphics 4600
+1:465  0:000  PCI (00|00:03.00) : 8086 0C0C class=040300
+1:465  0:000  PCI (00|00:14.00) : 8086 8C31 class=0C0330
+1:465  0:000  PCI (00|00:16.00) : 8086 8C3A class=078000
+1:465  0:000  PCI (00|00:16.01) : FFFF FFFF class=FFFFFF
+1:465  0:000  PCI (00|00:1A.00) : 8086 8C2D class=0C0320
+1:465  0:000  PCI (00|00:1B.00) : 8086 8C20 class=040300
+1:465  0:000  PCI (00|00:1C.00) : 8086 8C10 class=060400
+1:465  0:000  PCI (00|00:1C.01) : 8086 8C12 class=060400
+1:465  0:000  PCI (00|00:1C.02) : 8086 8C14 class=060400
+1:465  0:000  PCI (00|04:00.00) : 168C 0032 class=028000
+1:465  0:000  PCI (00|00:1C.03) : 8086 8C16 class=060400
+1:465  0:000  PCI (00|05:00.00) : 10EC 5287 class=FF0000
+1:465  0:000  PCI (00|05:00.01) : 10EC 8168 class=020000
+1:465  0:000  PCI (00|00:1D.00) : 8086 8C26 class=0C0320
+1:465  0:000  PCI (00|00:1F.00) : 8086 8C49 class=060100
+1:465  0:000  PCI (00|00:1F.02) : 8086 8C03 class=010601
+1:465  0:000  PCI (00|00:1F.03) : 8086 8C22 class=0C0500
+1:465  0:000  PCI (00|00:1F.06) : FFFF FFFF class=FFFFFF
+1:465  0:000  ScanSPD() start
+1:465  0:000  SMBus CmdReg: 0x3
+1:465  0:000  Scanning SMBus [8086:8C22], mmio: 0xF7A19004, ioport: 0xF040, hostc: 0x11
+1:479  0:014  SPD[0]: Type 11 @0x50 
+1:488  0:009  DDR speed 1600MHz 
+1:488  0:000  Slot: 0 Type 24 4096MB 1600MHz Vendor=Hynix Semiconductor PartNo=HMT451S6BFR8A-PBN0 SerialNo=000007070A040D0D 
+1:509  0:020  SPD[2]: Type 11 @0x52 
+1:518  0:009  DDR speed 1600MHz 
+1:518  0:000  Slot: 2 Type 24 4096MB 1600MHz Vendor=Hynix Semiconductor PartNo=HMT451S6BFR8A-PBN0 SerialNo=000001070A040B08 
+1:644  0:126  ScanSPD() end
+1:648  0:003  Get Acpi Tables List from RSDT:
+1:648  0:000   Found table: FACP  Notebook len=268
+1:648  0:000   Found table: APIC  Notebook len=146
+1:648  0:000   Found table: FPDT  Notebook len=68
+1:648  0:000   Found table: ECDT  Notebook len=193
+1:648  0:000   Found table: SSDT  zpodd len=413
+1:648  0:000   Found table: SSDT  Cpu0Ist len=1337
+1:648  0:000   Found table: SSDT  CpuPm len=2776
+1:648  0:000   Found table: MCFG  Notebook len=60
+1:648  0:000   Found table: HPET  Notebook len=56
+1:648  0:000   Found table: SSDT  SataTabl len=664
+1:648  0:000   Found table: SSDT  SaSsdt  len=17729
+1:648  0:000   Found table: SSDT  SgPeg len=6531
+1:648  0:000   Found table: BGRT  Notebook len=56
+1:648  0:000   Found table: DMAR  HSW  len=184
+1:648  0:000   Found table: SSDT  OptTabl len=6602
+1:648  0:000   Found table: MSDM  Notebook len=85
+1:648  0:000  Calibrated TSC frequency =2494219846 =2494MHz
+1:648  0:000  Loading main settings
+1:648  0:000  USB FixOwnership: true
+1:648  0:000  Dropping 1 tables
+1:648  0:000  Drop table 0 signature="SSDT" (54445353) table-id="PPM RCM " (204D4352204D5050)
+1:648  0:000  set table: 54445353, 204D4352204D5050 to drop:
+1:648  0:000  Config set Fixes will override FixMask mask!
+1:648  0:000     final mask=90001000
+1:648  0:000  Config set EnableC7: -
+1:648  0:000  Config set EnableC6: -
+1:648  0:000  Config set EnableC4: -
+1:648  0:000  Config set EnableC2: -
+1:648  0:000  Config set C3Latency: 17
+1:648  0:000  Config set smartUPS present
+1:648  0:000  Error in Second part of settings0: Not Found
+1:648  0:000  Oem smbios.plist not found at path: EFI\CLOVER\smbios.plist
+1:648  0:000  smbios.plist not found, not overriding config.plist
+1:648  0:000  found 7 volumes with blockIO
+1:648  0:000   0. Volume:
+1:648  0:000    PciRoot(0x0)\Pci(0x1D,0x0)\USB(0x1,0x0)\USB(0x3,0x0)
+1:650  0:001    Result of bootcode detection: bootable <null string> (<null string>)
+1:650  0:000    USB volume
+1:650  0:000    USB volume
+1:650  0:000    Volume 'Whole Disc Boot', LegacyOS '', LegacyIcon(s) 'legacy', GUID = <null guid>
+1:650  0:000   1. Volume:
+1:650  0:000    PciRoot(0x0)\Pci(0x1D,0x0)\USB(0x1,0x0)\USB(0x3,0x0)\HD(1,GPT,A009420E-C3C5-4C39-8D7B-103505802A44,0x28,0x64000)
+1:652  0:001    Result of bootcode detection: bootable Clover (clover)
+1:652  0:000    USB volume
+1:652  0:000    USB volume
+1:782  0:130    Volume 'EFI', LegacyOS 'Clover', LegacyIcon(s) 'clover', GUID = A009420E-C3C5-4C39-8D7B-103505802A44
+1:782  0:000    This is SelfVolume !!
+1:782  0:000   2. Volume:
+1:782  0:000    PciRoot(0x0)\Pci(0x1D,0x0)\USB(0x1,0x0)\USB(0x3,0x0)\HD(2,GPT,375C8BC4-40A1-49E7-8138-EFD743111774,0x64028,0xE010B0)
+1:784  0:001    USB volume
+1:784  0:000    USB volume
+1:784  0:000    Volume 'Install OS X Mavericks', LegacyOS '', LegacyIcon(s) '<null string>', GUID = 375C8BC4-40A1-49E7-8138-EFD743111774
+1:784  0:000   3. Volume:
+1:784  0:000    PciRoot(0x0)\Pci(0x1F,0x2)\Sata(0x2,0xFFFF,0x0)
+1:784  0:000    found optical drive
+1:784  0:000    Volume 'Whole Disc Boot', LegacyOS '', LegacyIcon(s) 'legacy', GUID = <null guid>
+1:784  0:000   4. Volume:
+1:784  0:000    PciRoot(0x0)\Pci(0x1F,0x2)\Sata(0x4,0xFFFF,0x0)
+1:784  0:000    Result of bootcode detection: bootable <null string> (<null string>)
+1:784  0:000    Volume 'Whole Disc Boot', LegacyOS '', LegacyIcon(s) 'legacy', GUID = <null guid>
+1:784  0:000   5. Volume:
+1:784  0:000    PciRoot(0x0)\Pci(0x1F,0x2)\Sata(0x4,0xFFFF,0x0)\HD(1,MBR,0x4F7391A9,0x800,0x32000)
+1:785  0:000    Result of bootcode detection: bootable Windows (vista,win)
+1:785  0:000    Volume 'Legacy HD1', LegacyOS 'Windows', LegacyIcon(s) 'vista,win', GUID = <null guid>
+1:785  0:000   6. Volume:
+1:785  0:000    PciRoot(0x0)\Pci(0x1F,0x2)\Sata(0x4,0xFFFF,0x0)\HD(2,MBR,0x4F7391A9,0x32800,0x3FAC000)
+1:786  0:000    Result of bootcode detection: bootable Windows (vista,win)
+1:786  0:000    Volume 'Legacy HD2', LegacyOS 'Windows', LegacyIcon(s) 'vista,win', GUID = <null guid>
+1:786  0:000  Searching volumes for latest nvram.plist ...
+1:786  0:000    1. Volume 'EFI', GUID = A009420E-C3C5-4C39-8D7B-103505802A44 - no nvram.plist - skipping!
+1:786  0:000    2. Volume 'Install OS X Mavericks', GUID = 375C8BC4-40A1-49E7-8138-EFD743111774 - no nvram.plist - skipping!
+1:791  0:005   nvram.plist not found!
+1:791  0:000  PutNvramPlistToRtVars: nvram.plist not found
+1:791  0:000  Invalidating BuiltinIcons...
+1:795  0:003  Using theme 'bluemac' (EFI\CLOVER\themes\bluemac)
+1:795  0:000  OS main and drive as badge
+1:805  0:010  font GoB_PTMono_10W.png loaded from themedir
+1:805  0:000  Font loaded: ImageWidth=176 ImageHeight=288
+1:806  0:000  Font 2 prepared WxH=11x18 CharWidth=10
+1:806  0:000  Choosing theme bluemac
+1:806  0:000  Custom entries start
+1:806  0:000  Custom entries finish
+1:806  0:000  Scanning loaders...
+1:806  0:000   0: 'Whole Disc Boot' no file system
+1:806  0:000   1: 'EFI'
+4:966  3:160    hiding entry: \EFI\BOOT\BOOTX64.efi
+4:966  0:000   2: 'Install OS X Mavericks'
+4:982  0:016  found PciRoot(0x0)\Pci(0x1D,0x0)\USB(0x1,0x0)\USB(0x3,0x0)\HD(2,GPT,375C8BC4-40A1-49E7-8138-EFD743111774,0x64028,0xE010B0)\.IABootFiles\boot.efi
+5:040  0:057   3: 'Whole Disc Boot' no file system
+5:040  0:000   4: 'Whole Disc Boot' no file system
+5:040  0:000   5: 'Legacy HD1' no file system
+5:040  0:000   6: 'Legacy HD2' no file system
+5:040  0:000  Custom legacy start
+5:040  0:000  Custom legacy end
+5:040  0:000  Scanning legacy ...
+5:040  0:000   0: 'Whole Disc Boot' (legacy) not legacy
+5:040  0:000   1: 'EFI' (clover) add legacy
+5:045  0:004   added 'Boot Clover from EFI' OSType=3 Icon=clover
+5:045  0:000   2: 'Install OS X Mavericks' (<null string>) not legacy
+5:045  0:000   3: 'Whole Disc Boot' (legacy) not legacy
+5:045  0:000   4: 'Whole Disc Boot' (legacy) not legacy
+5:045  0:000   5: 'Legacy HD1' (vista,win) add legacy
+5:053  0:008   added 'Boot Windows from Legacy HD1' OSType=2 Icon=vista,win
+5:053  0:000   6: 'Legacy HD2' (vista,win) add legacy
+5:058  0:004   added 'Boot Windows from Legacy HD2' OSType=2 Icon=vista,win
+5:058  0:000  Custom tool start
+5:058  0:000  Custom tool end
+5:063  0:005  found tool \EFI\CLOVER\tools\Shell64U.efi
+5:063  0:000  Checking EFI partition Volume 1 for Clover
+5:085  0:021   Found Clover
+5:087  0:002  EmuVariable UninstallEmulation: CloseEvent = Success, original var services restored
+5:087  0:000  FindBootOptionForFile: C7307718, \EFI\CLOVER\CLOVERX64.EFI
+5:087  0:000  BootOrder: 1: Boot0001
+5:087  0:000   Searching for: PciRoot(0x0)\Pci(0x1D,0x0)\USB(0x1,0x0)\USB(0x3,0x0)\HD(1,GPT,A009420E-C3C5-4C39-8D7B-103505802A44,0x28,0x64000)\EFI\CLOVER\CLOVERX64.EFI (Len: 132)
+5:087  0:000   and for: HD(1,GPT,A009420E-C3C5-4C39-8D7B-103505802A44,0x28,0x64000)\EFI\CLOVER\CLOVERX64.EFI (Len: 102)
+5:087  0:000  FindBootOptionForFile: Not found.
+5:095  0:008  EmuVariable InstallEmulation: orig vars copied, emu.var.services installed, CreateEvent VirtualAddressChange = Success, CreateEvent ExitBootServices = Success, set Status=Success
+5:100  0:004  GetEfiBootDeviceFromNvram: efi-boot-device-data not found
+5:100  0:000  EfiBootVolume not found
+5:100  0:000  Searching for DefaultVolume 'mac' ...
+5:100  0:000  Default boot entry not found
+5:100  0:000  EmuVariable UninstallEmulation: CloseEvent = Success, original var services restored
+5:100  0:000  DefaultIndex=-1 and MainMenu.EntryCount=10
+5:100  0:000  Use anime=rotary_logo_bluemac frames=4
+5:122  0:022   found 4 frames of the anime
+5:705  0:582  GUI ready
