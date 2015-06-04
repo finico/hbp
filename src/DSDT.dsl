@@ -3,13 +3,13 @@
  * AML Disassembler version 20110623-64 [Jun 23 2011]
  * Copyright (c) 2000 - 2011 Intel Corporation
  * 
- * Disassembly of iASLbTr9YA.aml, Fri Jun  5 00:02:28 2015
+ * Disassembly of iASLMxV35W.aml, Fri Jun  5 00:38:45 2015
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00012CD8 (77016)
+ *     Length           0x00012DFD (77309)
  *     Revision         0x02
- *     Checksum         0x0D
+ *     Checksum         0x5F
  *     OEM ID           "_ASUS_"
  *     OEM Table ID     "Notebook"
  *     OEM Revision     0x00000012 (18)
@@ -17,7 +17,7 @@
  *     Compiler Version 0x20150515 (538248469)
  */
 
-DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
+DefinitionBlock ("iASLMxV35W.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
 {
     External (LIDS, MethodObj)    // 0 Arguments
     External (PCCD)
@@ -10861,8 +10861,9 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 B0TM,   16, 
                 B0C1,   16, 
                 B0C2,   16, 
-                B0C3,   16, 
-                B0C4,   16, 
+                B0C3,   8, 
+                B0C4,   8, 
+                B0C5,   16, 
                         Offset (0xD0), 
                 B1PN,   16, 
                         Offset (0xD4), 
@@ -10879,11 +10880,13 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         Offset (0xF0), 
                         Offset (0xF2), 
                         Offset (0xF4), 
-                B0SN,   16, 
+                B0SN,   8, 
+                B1SN,   8, 
                         Offset (0xF8), 
                         Offset (0xFA), 
                         Offset (0xFC), 
-                B1SN,   16
+                B2SN,   8, 
+                B3SN,   8
             }
 
             Name (SMBF, Zero)
@@ -10940,7 +10943,8 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
             Field (SMBX, ByteAcc, NoLock, Preserve)
             {
                         Offset (0x04), 
-                DT2B,   16
+                DT2B,   8, 
+                DT3B,   8
             }
 
             OperationRegion (NSBS, EmbeddedControl, 0x40, 0x04)
@@ -11006,6 +11010,59 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 If (LEqual (Arg0, 0x03))
                 {
                     Store (Arg1, ECFL)
+                }
+            }
+
+            Method (RE1B, 1, NotSerialized)
+            {
+                OperationRegion (ERAM, EmbeddedControl, Arg0, One)
+                Field (ERAM, ByteAcc, NoLock, Preserve)
+                {
+                    BYTE,   8
+                }
+
+                Return (BYTE)
+            }
+
+            Method (RECB, 2, Serialized)
+            {
+                ShiftRight (Arg1, 0x03, Arg1)
+                Name (TEMP, Buffer (Arg1) {})
+                Add (Arg1, Arg0, Arg1)
+                Store (Zero, Local0)
+                While (LLess (Arg0, Arg1))
+                {
+                    Store (RE1B (Arg0), Index (TEMP, Local0))
+                    Increment (Arg0)
+                    Increment (Local0)
+                }
+
+                Return (TEMP)
+            }
+
+            Method (WE1B, 2, NotSerialized)
+            {
+                OperationRegion (ERAM, EmbeddedControl, Arg0, One)
+                Field (ERAM, ByteAcc, NoLock, Preserve)
+                {
+                    BYTE,   8
+                }
+
+                Store (Arg1, BYTE)
+            }
+
+            Method (WECB, 3, Serialized)
+            {
+                ShiftRight (Arg1, 0x03, Arg1)
+                Name (TEMP, Buffer (Arg1) {})
+                Store (Arg2, TEMP)
+                Add (Arg1, Arg0, Arg1)
+                Store (Zero, Local0)
+                While (LLess (Arg0, Arg1))
+                {
+                    WE1B (Arg0, DerefOf (Index (TEMP, Local0)))
+                    Increment (Arg0)
+                    Increment (Local0)
                 }
             }
         }
@@ -13697,7 +13754,7 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         0x0F))
                 }
 
-                Store (^^LPCB.EC0.B0C3, Index (BIXT, 0x08))
+                Store (B1B2 (^^LPCB.EC0.B0C3, ^^LPCB.EC0.B0C4), Index (BIXT, 0x08))
                 Store (0x0001869F, Index (BIXT, 0x09))
                 Return (BIXT)
             }
@@ -13936,11 +13993,11 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
             {
                 If (BSLF)
                 {
-                    Store (B1SN, Local0)
+                    Store (B1B2 (B2SN, B3SN), Local0)
                 }
                 Else
                 {
-                    Store (B0SN, Local0)
+                    Store (B1B2 (B0SN, B1SN), Local0)
                 }
             }
             Else
@@ -17215,7 +17272,7 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                     }
                 }
 
-                Store (Zero, BDAT)
+                WECB (0x1C, 0x0100, Zero)
                 Store (Arg0, PRTC)
                 Store (SWTC (Arg0), Index (Local0, Zero))
                 If (LEqual (DerefOf (Index (Local0, Zero)), Zero))
@@ -17223,13 +17280,13 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                     If (LEqual (Arg0, RDBL))
                     {
                         Store (BCNT, Index (Local0, One))
-                        Store (BDAT, Index (Local0, 0x02))
+                        Store (RECB (0x1C, 0x0100), Index (Local0, 0x02))
                     }
 
                     If (LEqual (Arg0, RDWD))
                     {
                         Store (0x02, Index (Local0, One))
-                        Store (DT2B, Index (Local0, 0x02))
+                        Store (B1B2 (DT2B, DT3B), Index (Local0, 0x02))
                     }
 
                     If (LEqual (Arg0, RDBT))
@@ -17298,7 +17355,7 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
 
             If (LLessEqual (Local2, 0x03E8))
             {
-                Store (Zero, BDAT)
+                WECB (0x1C, 0x0100, Zero)
                 ShiftLeft (Arg1, One, Local3)
                 Store (Local3, ADDR)
                 If (LNotEqual (Arg0, WRQK))
@@ -17312,7 +17369,7 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 If (LEqual (Arg0, WRBL))
                 {
                     Store (Arg3, BCNT)
-                    Store (Arg4, BDAT)
+                    WECB (0x1C, 0x0100, Arg4)
                 }
 
                 If (LEqual (Arg0, WRWD))
@@ -17478,7 +17535,7 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         If (LOr (LEqual (Arg1, 0x0A), LEqual (Arg1, 0x0B)))
                         {
                             Store (DerefOf (Index (Arg6, Zero)), BCNT)
-                            Store (DerefOf (Index (Arg6, One)), BDAT)
+                            WECB (0x1C, 0x0100, DerefOf (Index (Arg6, One)))
                         }
                         Else
                         {
@@ -17495,7 +17552,7 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         If (LOr (LEqual (Arg1, 0x0A), LEqual (Arg1, 0x0B)))
                         {
                             Store (DerefOf (Index (Arg6, Zero)), BCN2)
-                            Store (DerefOf (Index (Arg6, One)), BDA2)
+                            WECB (0x44, 0x0100, DerefOf (Index (Arg6, One)))
                         }
                         Else
                         {
@@ -17532,7 +17589,7 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                             Store (DAT0, Index (Local1, One))
                             Store (DAT1, Index (Local1, 0x02))
                             Store (BCNT, Index (Local1, 0x03))
-                            Store (BDAT, Index (Local1, 0x04))
+                            Store (RECB (0x1C, 0x0100), Index (Local1, 0x04))
                         }
                         Else
                         {
@@ -17540,7 +17597,7 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                             Store (DA20, Index (Local1, One))
                             Store (DA21, Index (Local1, 0x02))
                             Store (BCN2, Index (Local1, 0x03))
-                            Store (BDA2, Index (Local1, 0x04))
+                            Store (RECB (0x44, 0x0100), Index (Local1, 0x04))
                         }
 
                         And (Local0, 0x1F, Local0)
@@ -20930,6 +20987,11 @@ DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
         \_SB.PCI0.NWAK (Arg0)
         \_SB.ATKD.GENW (Arg0)
         \_SB.PCI0.GFX0.OWAK (Arg0, OEMW (Arg0))
+    }
+
+    Method (B1B2, 2, NotSerialized)
+    {
+        Return (Or (Arg0, ShiftLeft (Arg1, 0x08)))
     }
 }
 
