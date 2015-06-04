@@ -10,6 +10,15 @@
 			<false/>
 			<key>DropOEM_DSM</key>
 			<false/>
+			<key>Fixes</key>
+			<dict>
+				<key>AddDTGP_0001</key>
+				<true/>
+				<key>FixAirport_4000</key>
+				<true/>
+				<key>FixHDA_8000</key>
+				<true/>
+			</dict>
 			<key>ReuseFFFF</key>
 			<false/>
 		</dict>
@@ -42,9 +51,9 @@
 			<true/>
 			<key>Generate</key>
 			<dict>
-				<key>DoubleFirstState</key>
-				<true/>
 				<key>CStates</key>
+				<true/>
+				<key>DoubleFirstState</key>
 				<true/>
 				<key>PStates</key>
 				<true/>
@@ -57,10 +66,10 @@
 	<dict>
 		<key>Arguments</key>
 		<string>-xcpm nv_disable=1 -gux_defer_usb2 kext-dev-mode=1</string>
-		<key>DefaultVolume</key>
-		<string>mavr</string>
 		<key>Debug</key>
 		<false/>
+		<key>DefaultVolume</key>
+		<string>mavr</string>
 		<key>Legacy</key>
 		<string>LegacyBiosDefault</string>
 		<key>Secure</key>
@@ -76,6 +85,8 @@
 		<dict>
 			<key>IntelGFX</key>
 			<string>0x04128086</string>
+			<key>WIFI</key>
+			<string>0x43a014e4</string>
 		</dict>
 		<key>USB</key>
 		<dict>
@@ -200,16 +211,30 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Broadcom 5Ghz XT</string>
+				<string>BCM94352HMB 5GHz Fix</string>
 				<key>Find</key>
 				<data>
-				WFQAMxkwIQAA
+				AVhU
 				</data>
 				<key>Name</key>
 				<string>AirPortBrcm4360</string>
 				<key>Replace</key>
 				<data>
-				WFQAV6g6tgAJ
+				AVhY
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>BCM94352HMB whitelist</string>
+				<key>Find</key>
+				<data>
+				axAAAHUN
+				</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				axAAAJCQ
 				</data>
 			</dict>
 			<dict>
@@ -270,20 +295,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Broadcom 43224 whitelist</string>
-				<key>Find</key>
-				<data>
-				TWFjLTJFNkZBQjk2NTY2RkU1OEM=
-				</data>
-				<key>Name</key>
-				<string>AirPortBrcm4360</string>
-				<key>Replace</key>
-				<data>
-				TWFjLTNDQkQwMDIzNEU1NTRFNDE=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Disable ECC Memory in MacPro SMBIOS</string>
 				<key>Find</key>
 				<data>
@@ -312,20 +323,6 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
-				<string>Disable the sleep code</string>
-				<key>Find</key>
-				<data>
-				xoDIAAAAAQ==
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				xoDIAAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>Patch MSI 1</string>
 				<key>Find</key>
 				<data>
@@ -336,20 +333,6 @@
 				<key>Replace</key>
 				<data>
 				gUkIAAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Fix Bluetooth 30 seconds commandWakeup</string>
-				<key>Find</key>
-				<data>
-				AAAAD4UHAQAA
-				</data>
-				<key>Name</key>
-				<string>IOBluetoothHostControllerUSBTransport</string>
-				<key>Replace</key>
-				<data>
-				AAAAD4QHAQAA
 				</data>
 			</dict>
 			<dict>
@@ -398,20 +381,6 @@
 				AAAAAAAAAAAAEAACAAAAMAAAAAEFEgAACAAAhwAAAAIE
 				EgAACAAAhwAAAP8AAQABAAAAQAAAAA8AAAABAQAABAAA
 				AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA4AAAA=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Broadcom Airport Extreme</string>
-				<key>Find</key>
-				<data>
-				axAAAHUN
-				</data>
-				<key>Name</key>
-				<string>AirPortBrcm4360</string>
-				<key>Replace</key>
-				<data>
-				axAAAJCQ
 				</data>
 			</dict>
 			<dict>
