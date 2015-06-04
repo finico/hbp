@@ -3,13 +3,13 @@
  * AML Disassembler version 20110623-64 [Jun 23 2011]
  * Copyright (c) 2000 - 2011 Intel Corporation
  * 
- * Disassembly of iASLMxV35W.aml, Fri Jun  5 00:38:45 2015
+ * Disassembly of iASLgY40wU.aml, Fri Jun  5 00:58:53 2015
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00012DFD (77309)
+ *     Length           0x00012E55 (77397)
  *     Revision         0x02
- *     Checksum         0x5F
+ *     Checksum         0x9A
  *     OEM ID           "_ASUS_"
  *     OEM Table ID     "Notebook"
  *     OEM Revision     0x00000012 (18)
@@ -17,7 +17,7 @@
  *     Compiler Version 0x20150515 (538248469)
  */
 
-DefinitionBlock ("iASLMxV35W.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
+DefinitionBlock ("iASLgY40wU.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
 {
     External (LIDS, MethodObj)    // 0 Arguments
     External (PCCD)
@@ -2657,6 +2657,30 @@ DefinitionBlock ("iASLMxV35W.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
             Device (LPCB)
             {
                 Name (_ADR, 0x001F0000)
+                Method (_DSM, 4, NotSerialized)
+                {
+                    If (LEqual (Arg2, Zero))
+                    {
+                        Return (Buffer (One)
+                        {
+                            0x03
+                        })
+                    }
+
+                    Return (Package (0x06)
+                    {
+                        "name", 
+                        "pci8086,8c4b", 
+                        "compatible", 
+                        "pci8086,8c4b", 
+                        "device-id", 
+                        Buffer (0x04)
+                        {
+                            0x4B, 0x8C, 0x00, 0x00
+                        }
+                    })
+                }
+
                 Scope (\_SB)
                 {
                     OperationRegion (PCI0.LPCB.LPC1, PCI_Config, Zero, 0x0100)
