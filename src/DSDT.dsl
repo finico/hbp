@@ -3,21 +3,21 @@
  * AML Disassembler version 20110623-64 [Jun 23 2011]
  * Copyright (c) 2000 - 2011 Intel Corporation
  * 
- * Disassembly of iASLzv0PLu.aml, Fri Jun  5 00:01:00 2015
+ * Disassembly of iASLbTr9YA.aml, Fri Jun  5 00:02:28 2015
  *
  * Original Table Header:
  *     Signature        "DSDT"
- *     Length           0x00013CF2 (81138)
+ *     Length           0x00012CD8 (77016)
  *     Revision         0x02
- *     Checksum         0x69
+ *     Checksum         0x0D
  *     OEM ID           "_ASUS_"
  *     OEM Table ID     "Notebook"
  *     OEM Revision     0x00000012 (18)
  *     Compiler ID      "INTL"
- *     Compiler Version 0x20120711 (538052369)
+ *     Compiler Version 0x20150515 (538248469)
  */
 
-DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
+DefinitionBlock ("iASLbTr9YA.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
 {
     External (LIDS, MethodObj)    // 0 Arguments
     External (PCCD)
@@ -169,7 +169,7 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
     Name (SS3, One)
     Name (SS4, One)
     Name (IOST, 0x4400)
-    Name (TOPM, 0x00000000)
+    Name (TOPM, Zero)
     Name (ROMS, 0xFFE00000)
     Name (VGAF, One)
     OperationRegion (GNVS, SystemMemory, 0xCAB01C18, 0x02B2)
@@ -1989,126 +1989,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 }
             }
 
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
-            Zero
             Device (B0D4)
             {
                 Name (_ADR, 0x00040000)
@@ -2175,123 +2055,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
-                {
-                    Name (_T_1, Zero)
-                    Name (_T_0, Zero)
-                    While (One)
-                    {
-                        Store (ToInteger (Arg0), _T_0)
-                        If (LEqual (_T_0, Buffer (0x10)
-                                {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
-                                }))
-                        {
-                            While (One)
-                            {
-                                Store (ToInteger (Arg2), _T_1)
-                                If (LEqual (_T_1, Zero))
-                                {
-                                    If (LEqual (Arg1, 0x02))
-                                    {
-                                        Store (One, OPTS)
-                                        If (LTRE)
-                                        {
-                                            Or (OPTS, 0x40, OPTS)
-                                        }
-
-                                        If (OBFF)
-                                        {
-                                            Or (OPTS, 0x10, OPTS)
-                                        }
-
-                                        Return (OPTS)
-                                    }
-                                    Else
-                                    {
-                                        Return (Zero)
-                                    }
-                                }
-                                Else
-                                {
-                                    If (LEqual (_T_1, 0x04))
-                                    {
-                                        If (LEqual (Arg1, 0x02))
-                                        {
-                                            If (OBFF)
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                            Else
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_1, 0x06))
-                                        {
-                                            If (LEqual (Arg1, 0x02))
-                                            {
-                                                If (LTRE)
-                                                {
-                                                    If (LOr (LEqual (LMSL, 0xFFFFFFFF), LEqual (LNSL, 0xFFFFFFFF)))
-                                                    {
-                                                        If (LEqual (PCHS, One))
-                                                        {
-                                                            Store (0x0846, LMSL)
-                                                            Store (0x0846, LNSL)
-                                                        }
-                                                        Else
-                                                        {
-                                                            If (LEqual (PCHS, 0x02))
-                                                            {
-                                                                Store (0x1003, LMSL)
-                                                                Store (0x1003, LNSL)
-                                                            }
-                                                        }
-                                                    }
-
-                                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, 
-                                                        Zero))
-                                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 
-                                                        0x02))
-                                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                                    Return (LTRV)
-                                                }
-                                                Else
-                                                {
-                                                    Return (Zero)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                Break
-                            }
-                        }
-
-                        Break
-                    }
-
-                    Return (Buffer (One)
-                    {
-                        0x00
-                    })
-                }
-
                 Device (PXSX)
                 {
                     Name (_ADR, Zero)
@@ -2432,123 +2195,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
-                {
-                    Name (_T_1, Zero)
-                    Name (_T_0, Zero)
-                    While (One)
-                    {
-                        Store (ToInteger (Arg0), _T_0)
-                        If (LEqual (_T_0, Buffer (0x10)
-                                {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
-                                }))
-                        {
-                            While (One)
-                            {
-                                Store (ToInteger (Arg2), _T_1)
-                                If (LEqual (_T_1, Zero))
-                                {
-                                    If (LEqual (Arg1, 0x02))
-                                    {
-                                        Store (One, OPTS)
-                                        If (LTRE)
-                                        {
-                                            Or (OPTS, 0x40, OPTS)
-                                        }
-
-                                        If (OBFF)
-                                        {
-                                            Or (OPTS, 0x10, OPTS)
-                                        }
-
-                                        Return (OPTS)
-                                    }
-                                    Else
-                                    {
-                                        Return (Zero)
-                                    }
-                                }
-                                Else
-                                {
-                                    If (LEqual (_T_1, 0x04))
-                                    {
-                                        If (LEqual (Arg1, 0x02))
-                                        {
-                                            If (OBFF)
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                            Else
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_1, 0x06))
-                                        {
-                                            If (LEqual (Arg1, 0x02))
-                                            {
-                                                If (LTRE)
-                                                {
-                                                    If (LOr (LEqual (LMSL, 0xFFFFFFFF), LEqual (LNSL, 0xFFFFFFFF)))
-                                                    {
-                                                        If (LEqual (PCHS, One))
-                                                        {
-                                                            Store (0x0846, LMSL)
-                                                            Store (0x0846, LNSL)
-                                                        }
-                                                        Else
-                                                        {
-                                                            If (LEqual (PCHS, 0x02))
-                                                            {
-                                                                Store (0x1003, LMSL)
-                                                                Store (0x1003, LNSL)
-                                                            }
-                                                        }
-                                                    }
-
-                                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, 
-                                                        Zero))
-                                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 
-                                                        0x02))
-                                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                                    Return (LTRV)
-                                                }
-                                                Else
-                                                {
-                                                    Return (Zero)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                Break
-                            }
-                        }
-
-                        Break
-                    }
-
-                    Return (Buffer (One)
-                    {
-                        0x00
-                    })
-                }
-
                 Device (PXSX)
                 {
                     Name (_ADR, Zero)
@@ -2679,123 +2325,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
-                {
-                    Name (_T_1, Zero)
-                    Name (_T_0, Zero)
-                    While (One)
-                    {
-                        Store (ToInteger (Arg0), _T_0)
-                        If (LEqual (_T_0, Buffer (0x10)
-                                {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
-                                }))
-                        {
-                            While (One)
-                            {
-                                Store (ToInteger (Arg2), _T_1)
-                                If (LEqual (_T_1, Zero))
-                                {
-                                    If (LEqual (Arg1, 0x02))
-                                    {
-                                        Store (One, OPTS)
-                                        If (LTRE)
-                                        {
-                                            Or (OPTS, 0x40, OPTS)
-                                        }
-
-                                        If (OBFF)
-                                        {
-                                            Or (OPTS, 0x10, OPTS)
-                                        }
-
-                                        Return (OPTS)
-                                    }
-                                    Else
-                                    {
-                                        Return (Zero)
-                                    }
-                                }
-                                Else
-                                {
-                                    If (LEqual (_T_1, 0x04))
-                                    {
-                                        If (LEqual (Arg1, 0x02))
-                                        {
-                                            If (OBFF)
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                            Else
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_1, 0x06))
-                                        {
-                                            If (LEqual (Arg1, 0x02))
-                                            {
-                                                If (LTRE)
-                                                {
-                                                    If (LOr (LEqual (LMSL, 0xFFFFFFFF), LEqual (LNSL, 0xFFFFFFFF)))
-                                                    {
-                                                        If (LEqual (PCHS, One))
-                                                        {
-                                                            Store (0x0846, LMSL)
-                                                            Store (0x0846, LNSL)
-                                                        }
-                                                        Else
-                                                        {
-                                                            If (LEqual (PCHS, 0x02))
-                                                            {
-                                                                Store (0x1003, LMSL)
-                                                                Store (0x1003, LNSL)
-                                                            }
-                                                        }
-                                                    }
-
-                                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, 
-                                                        Zero))
-                                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 
-                                                        0x02))
-                                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                                    Return (LTRV)
-                                                }
-                                                Else
-                                                {
-                                                    Return (Zero)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                Break
-                            }
-                        }
-
-                        Break
-                    }
-
-                    Return (Buffer (One)
-                    {
-                        0x00
-                    })
-                }
-
                 Device (PXSX)
                 {
                     Name (_ADR, Zero)
@@ -2926,123 +2455,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
-                {
-                    Name (_T_1, Zero)
-                    Name (_T_0, Zero)
-                    While (One)
-                    {
-                        Store (ToInteger (Arg0), _T_0)
-                        If (LEqual (_T_0, Buffer (0x10)
-                                {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
-                                }))
-                        {
-                            While (One)
-                            {
-                                Store (ToInteger (Arg2), _T_1)
-                                If (LEqual (_T_1, Zero))
-                                {
-                                    If (LEqual (Arg1, 0x02))
-                                    {
-                                        Store (One, OPTS)
-                                        If (LTRE)
-                                        {
-                                            Or (OPTS, 0x40, OPTS)
-                                        }
-
-                                        If (OBFF)
-                                        {
-                                            Or (OPTS, 0x10, OPTS)
-                                        }
-
-                                        Return (OPTS)
-                                    }
-                                    Else
-                                    {
-                                        Return (Zero)
-                                    }
-                                }
-                                Else
-                                {
-                                    If (LEqual (_T_1, 0x04))
-                                    {
-                                        If (LEqual (Arg1, 0x02))
-                                        {
-                                            If (OBFF)
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                            Else
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_1, 0x06))
-                                        {
-                                            If (LEqual (Arg1, 0x02))
-                                            {
-                                                If (LTRE)
-                                                {
-                                                    If (LOr (LEqual (LMSL, 0xFFFFFFFF), LEqual (LNSL, 0xFFFFFFFF)))
-                                                    {
-                                                        If (LEqual (PCHS, One))
-                                                        {
-                                                            Store (0x0846, LMSL)
-                                                            Store (0x0846, LNSL)
-                                                        }
-                                                        Else
-                                                        {
-                                                            If (LEqual (PCHS, 0x02))
-                                                            {
-                                                                Store (0x1003, LMSL)
-                                                                Store (0x1003, LNSL)
-                                                            }
-                                                        }
-                                                    }
-
-                                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, 
-                                                        Zero))
-                                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 
-                                                        0x02))
-                                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                                    Return (LTRV)
-                                                }
-                                                Else
-                                                {
-                                                    Return (Zero)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                Break
-                            }
-                        }
-
-                        Break
-                    }
-
-                    Return (Buffer (One)
-                    {
-                        0x00
-                    })
-                }
-
                 Device (PXSX)
                 {
                     Name (_ADR, Zero)
@@ -3173,123 +2585,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
-                {
-                    Name (_T_1, Zero)
-                    Name (_T_0, Zero)
-                    While (One)
-                    {
-                        Store (ToInteger (Arg0), _T_0)
-                        If (LEqual (_T_0, Buffer (0x10)
-                                {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
-                                }))
-                        {
-                            While (One)
-                            {
-                                Store (ToInteger (Arg2), _T_1)
-                                If (LEqual (_T_1, Zero))
-                                {
-                                    If (LEqual (Arg1, 0x02))
-                                    {
-                                        Store (One, OPTS)
-                                        If (LTRE)
-                                        {
-                                            Or (OPTS, 0x40, OPTS)
-                                        }
-
-                                        If (OBFF)
-                                        {
-                                            Or (OPTS, 0x10, OPTS)
-                                        }
-
-                                        Return (OPTS)
-                                    }
-                                    Else
-                                    {
-                                        Return (Zero)
-                                    }
-                                }
-                                Else
-                                {
-                                    If (LEqual (_T_1, 0x04))
-                                    {
-                                        If (LEqual (Arg1, 0x02))
-                                        {
-                                            If (OBFF)
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                            Else
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_1, 0x06))
-                                        {
-                                            If (LEqual (Arg1, 0x02))
-                                            {
-                                                If (LTRE)
-                                                {
-                                                    If (LOr (LEqual (LMSL, 0xFFFFFFFF), LEqual (LNSL, 0xFFFFFFFF)))
-                                                    {
-                                                        If (LEqual (PCHS, One))
-                                                        {
-                                                            Store (0x0846, LMSL)
-                                                            Store (0x0846, LNSL)
-                                                        }
-                                                        Else
-                                                        {
-                                                            If (LEqual (PCHS, 0x02))
-                                                            {
-                                                                Store (0x1003, LMSL)
-                                                                Store (0x1003, LNSL)
-                                                            }
-                                                        }
-                                                    }
-
-                                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, 
-                                                        Zero))
-                                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 
-                                                        0x02))
-                                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                                    Return (LTRV)
-                                                }
-                                                Else
-                                                {
-                                                    Return (Zero)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                Break
-                            }
-                        }
-
-                        Break
-                    }
-
-                    Return (Buffer (One)
-                    {
-                        0x00
-                    })
-                }
-
                 Device (PXSX)
                 {
                     Name (_ADR, Zero)
@@ -3845,57 +3140,16 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 Device (HPET)
                 {
                     Name (_HID, EisaId ("PNP0103"))
-                    Name (_UID, Zero)
-                    Name (BUF0, ResourceTemplate ()
+                    Name (_STA, 0x0F)
+                    Name (_CRS, ResourceTemplate ()
                     {
+                        IRQNoFlags ()
+                            {2,8}
                         Memory32Fixed (ReadWrite,
                             0xFED00000,         // Address Base
                             0x00000400,         // Address Length
                             )
                     })
-                    Method (_STA, 0, NotSerialized)
-                    {
-                        If (LGreaterEqual (OSYS, 0x07D1))
-                        {
-                            If (HPAE)
-                            {
-                                Return (0x0F)
-                            }
-                        }
-                        Else
-                        {
-                            If (HPAE)
-                            {
-                                Return (0x0B)
-                            }
-                        }
-
-                        Return (Zero)
-                    }
-
-                    Method (_CRS, 0, Serialized)
-                    {
-                        If (HPAE)
-                        {
-                            CreateDWordField (BUF0, 0x04, HPT0)
-                            If (LEqual (HPAS, One))
-                            {
-                                Store (0xFED01000, HPT0)
-                            }
-
-                            If (LEqual (HPAS, 0x02))
-                            {
-                                Store (0xFED02000, HPT0)
-                            }
-
-                            If (LEqual (HPAS, 0x03))
-                            {
-                                Store (0xFED03000, HPT0)
-                            }
-                        }
-
-                        Return (BUF0)
-                    }
                 }
 
                 Device (IPIC)
@@ -4005,8 +3259,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                             0x01,               // Alignment
                             0x02,               // Length
                             )
-                        IRQNoFlags ()
-                            {2}
                     })
                 }
 
@@ -4197,8 +3449,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                             0x01,               // Alignment
                             0x08,               // Length
                             )
-                        IRQNoFlags ()
-                            {8}
                     })
                 }
 
@@ -4219,8 +3469,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                             0x10,               // Alignment
                             0x04,               // Length
                             )
-                        IRQNoFlags ()
-                            {0}
                     })
                 }
 
@@ -4869,7 +4117,7 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
 
                     Method (_STA, 0, NotSerialized)
                     {
-                        ShiftLeft (One, 0x0E, Local0)
+                        Store (0x4000, Local0)
                         If (And (IOST, Local0))
                         {
                             Return (0x0F)
@@ -4906,7 +4154,7 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                     })
                     Method (_CRS, 0, NotSerialized)
                     {
-                        ShiftLeft (One, 0x0A, Local0)
+                        Store (0x0400, Local0)
                         If (And (IOST, Local0))
                         {
                             Return (CRS1)
@@ -5036,123 +4284,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
-                {
-                    Name (_T_1, Zero)
-                    Name (_T_0, Zero)
-                    While (One)
-                    {
-                        Store (ToInteger (Arg0), _T_0)
-                        If (LEqual (_T_0, Buffer (0x10)
-                                {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
-                                }))
-                        {
-                            While (One)
-                            {
-                                Store (ToInteger (Arg2), _T_1)
-                                If (LEqual (_T_1, Zero))
-                                {
-                                    If (LEqual (Arg1, 0x02))
-                                    {
-                                        Store (One, OPTS)
-                                        If (LTRE)
-                                        {
-                                            Or (OPTS, 0x40, OPTS)
-                                        }
-
-                                        If (OBFF)
-                                        {
-                                            Or (OPTS, 0x10, OPTS)
-                                        }
-
-                                        Return (OPTS)
-                                    }
-                                    Else
-                                    {
-                                        Return (Zero)
-                                    }
-                                }
-                                Else
-                                {
-                                    If (LEqual (_T_1, 0x04))
-                                    {
-                                        If (LEqual (Arg1, 0x02))
-                                        {
-                                            If (OBFF)
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                            Else
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_1, 0x06))
-                                        {
-                                            If (LEqual (Arg1, 0x02))
-                                            {
-                                                If (LTRE)
-                                                {
-                                                    If (LOr (LEqual (LMSL, 0xFFFFFFFF), LEqual (LNSL, 0xFFFFFFFF)))
-                                                    {
-                                                        If (LEqual (PCHS, One))
-                                                        {
-                                                            Store (0x0846, LMSL)
-                                                            Store (0x0846, LNSL)
-                                                        }
-                                                        Else
-                                                        {
-                                                            If (LEqual (PCHS, 0x02))
-                                                            {
-                                                                Store (0x1003, LMSL)
-                                                                Store (0x1003, LNSL)
-                                                            }
-                                                        }
-                                                    }
-
-                                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, 
-                                                        Zero))
-                                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 
-                                                        0x02))
-                                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                                    Return (LTRV)
-                                                }
-                                                Else
-                                                {
-                                                    Return (Zero)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                Break
-                            }
-                        }
-
-                        Break
-                    }
-
-                    Return (Buffer (One)
-                    {
-                        0x00
-                    })
-                }
-
                 Device (PXSX)
                 {
                     Name (_ADR, Zero)
@@ -5306,123 +4437,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
-                {
-                    Name (_T_1, Zero)
-                    Name (_T_0, Zero)
-                    While (One)
-                    {
-                        Store (ToInteger (Arg0), _T_0)
-                        If (LEqual (_T_0, Buffer (0x10)
-                                {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
-                                }))
-                        {
-                            While (One)
-                            {
-                                Store (ToInteger (Arg2), _T_1)
-                                If (LEqual (_T_1, Zero))
-                                {
-                                    If (LEqual (Arg1, 0x02))
-                                    {
-                                        Store (One, OPTS)
-                                        If (LTRE)
-                                        {
-                                            Or (OPTS, 0x40, OPTS)
-                                        }
-
-                                        If (OBFF)
-                                        {
-                                            Or (OPTS, 0x10, OPTS)
-                                        }
-
-                                        Return (OPTS)
-                                    }
-                                    Else
-                                    {
-                                        Return (Zero)
-                                    }
-                                }
-                                Else
-                                {
-                                    If (LEqual (_T_1, 0x04))
-                                    {
-                                        If (LEqual (Arg1, 0x02))
-                                        {
-                                            If (OBFF)
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                            Else
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_1, 0x06))
-                                        {
-                                            If (LEqual (Arg1, 0x02))
-                                            {
-                                                If (LTRE)
-                                                {
-                                                    If (LOr (LEqual (LMSL, 0xFFFFFFFF), LEqual (LNSL, 0xFFFFFFFF)))
-                                                    {
-                                                        If (LEqual (PCHS, One))
-                                                        {
-                                                            Store (0x0846, LMSL)
-                                                            Store (0x0846, LNSL)
-                                                        }
-                                                        Else
-                                                        {
-                                                            If (LEqual (PCHS, 0x02))
-                                                            {
-                                                                Store (0x1003, LMSL)
-                                                                Store (0x1003, LNSL)
-                                                            }
-                                                        }
-                                                    }
-
-                                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, 
-                                                        Zero))
-                                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 
-                                                        0x02))
-                                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                                    Return (LTRV)
-                                                }
-                                                Else
-                                                {
-                                                    Return (Zero)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                Break
-                            }
-                        }
-
-                        Break
-                    }
-
-                    Return (Buffer (One)
-                    {
-                        0x00
-                    })
-                }
-
                 Device (PXSX)
                 {
                     Name (_ADR, Zero)
@@ -5605,123 +4619,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 })
                 Name (OPTS, Zero)
                 Name (RPAV, Zero)
-                Method (_DSM, 4, Serialized)
-                {
-                    Name (_T_1, Zero)
-                    Name (_T_0, Zero)
-                    While (One)
-                    {
-                        Store (ToInteger (Arg0), _T_0)
-                        If (LEqual (_T_0, Buffer (0x10)
-                                {
-                                    /* 0000 */    0xD0, 0x37, 0xC9, 0xE5, 0x53, 0x35, 0x7A, 0x4D, 
-                                    /* 0008 */    0x91, 0x17, 0xEA, 0x4D, 0x19, 0xC3, 0x43, 0x4D
-                                }))
-                        {
-                            While (One)
-                            {
-                                Store (ToInteger (Arg2), _T_1)
-                                If (LEqual (_T_1, Zero))
-                                {
-                                    If (LEqual (Arg1, 0x02))
-                                    {
-                                        Store (One, OPTS)
-                                        If (LTRE)
-                                        {
-                                            Or (OPTS, 0x40, OPTS)
-                                        }
-
-                                        If (OBFF)
-                                        {
-                                            Or (OPTS, 0x10, OPTS)
-                                        }
-
-                                        Return (OPTS)
-                                    }
-                                    Else
-                                    {
-                                        Return (Zero)
-                                    }
-                                }
-                                Else
-                                {
-                                    If (LEqual (_T_1, 0x04))
-                                    {
-                                        If (LEqual (Arg1, 0x02))
-                                        {
-                                            If (OBFF)
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x08, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                            Else
-                                            {
-                                                Return (Buffer (0x10)
-                                                {
-                                                    /* 0000 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
-                                                    /* 0008 */    0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00
-                                                })
-                                            }
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_1, 0x06))
-                                        {
-                                            If (LEqual (Arg1, 0x02))
-                                            {
-                                                If (LTRE)
-                                                {
-                                                    If (LOr (LEqual (LMSL, 0xFFFFFFFF), LEqual (LNSL, 0xFFFFFFFF)))
-                                                    {
-                                                        If (LEqual (PCHS, One))
-                                                        {
-                                                            Store (0x0846, LMSL)
-                                                            Store (0x0846, LNSL)
-                                                        }
-                                                        Else
-                                                        {
-                                                            If (LEqual (PCHS, 0x02))
-                                                            {
-                                                                Store (0x1003, LMSL)
-                                                                Store (0x1003, LNSL)
-                                                            }
-                                                        }
-                                                    }
-
-                                                    Store (And (ShiftRight (LMSL, 0x0A), 0x07), Index (LTRV, 
-                                                        Zero))
-                                                    Store (And (LMSL, 0x03FF), Index (LTRV, One))
-                                                    Store (And (ShiftRight (LNSL, 0x0A), 0x07), Index (LTRV, 
-                                                        0x02))
-                                                    Store (And (LNSL, 0x03FF), Index (LTRV, 0x03))
-                                                    Return (LTRV)
-                                                }
-                                                Else
-                                                {
-                                                    Return (Zero)
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                Break
-                            }
-                        }
-
-                        Break
-                    }
-
-                    Return (Buffer (One)
-                    {
-                        0x00
-                    })
-                }
-
                 Device (PXSX)
                 {
                     Name (_ADR, Zero)
@@ -5834,24 +4731,24 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
     Name (RPA5, 0x001C0005)
     Name (RPA6, 0x001C0006)
     Name (RPA7, 0x001C0007)
-    Name (PCHS, 0x00000001)
+    Name (PCHS, One)
     Name (SRMB, 0xF7FE0000)
-    Name (PML1, 0x00000846)
-    Name (PML2, 0x00000846)
-    Name (PML3, 0x00000846)
-    Name (PML4, 0x00000846)
-    Name (PML5, 0x00000846)
-    Name (PML6, 0x00000846)
-    Name (PML7, 0x00000846)
-    Name (PML8, 0x00000846)
-    Name (PNL1, 0x00000846)
-    Name (PNL2, 0x00000846)
-    Name (PNL3, 0x00000846)
-    Name (PNL4, 0x00000846)
-    Name (PNL5, 0x00000846)
-    Name (PNL6, 0x00000846)
-    Name (PNL7, 0x00000846)
-    Name (PNL8, 0x00000846)
+    Name (PML1, 0x0846)
+    Name (PML2, 0x0846)
+    Name (PML3, 0x0846)
+    Name (PML4, 0x0846)
+    Name (PML5, 0x0846)
+    Name (PML6, 0x0846)
+    Name (PML7, 0x0846)
+    Name (PML8, 0x0846)
+    Name (PNL1, 0x0846)
+    Name (PNL2, 0x0846)
+    Name (PNL3, 0x0846)
+    Name (PNL4, 0x0846)
+    Name (PNL5, 0x0846)
+    Name (PNL6, 0x0846)
+    Name (PNL7, 0x0846)
+    Name (PNL8, 0x0846)
     Scope (\)
     {
         OperationRegion (IO_D, SystemIO, 0x0810, 0x04)
@@ -6409,63 +5306,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         }
 
                         Alias (SBV1, SDGV)
-                        Method (_DSM, 4, Serialized)
-                        {
-                            Name (_T_0, Zero)
-                            If (LEqual (Arg0, Buffer (0x10)
-                                    {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
-                                    }))
-                            {
-                                While (One)
-                                {
-                                    Store (ToInteger (Arg2), _T_0)
-                                    If (LEqual (_T_0, Zero))
-                                    {
-                                        If (LEqual (Arg1, One))
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x07
-                                            })
-                                        }
-                                        Else
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x00
-                                            })
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_0, One))
-                                        {
-                                            If (LEqual (SDGV, 0xFF))
-                                            {
-                                                Return (Zero)
-                                            }
-                                            Else
-                                            {
-                                                Return (One)
-                                            }
-                                        }
-                                        Else
-                                        {
-                                            If (LEqual (_T_0, 0x02))
-                                            {
-                                                Return (SDGV)
-                                            }
-                                        }
-                                    }
-
-                                    Break
-                                }
-                            }
-
-                            Return (Zero)
-                        }
                     }
 
                     Device (PR15)
@@ -6505,63 +5345,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         }
 
                         Alias (SBV2, SDGV)
-                        Method (_DSM, 4, Serialized)
-                        {
-                            Name (_T_0, Zero)
-                            If (LEqual (Arg0, Buffer (0x10)
-                                    {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
-                                    }))
-                            {
-                                While (One)
-                                {
-                                    Store (ToInteger (Arg2), _T_0)
-                                    If (LEqual (_T_0, Zero))
-                                    {
-                                        If (LEqual (Arg1, One))
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x07
-                                            })
-                                        }
-                                        Else
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x00
-                                            })
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_0, One))
-                                        {
-                                            If (LEqual (SDGV, 0xFF))
-                                            {
-                                                Return (Zero)
-                                            }
-                                            Else
-                                            {
-                                                Return (One)
-                                            }
-                                        }
-                                        Else
-                                        {
-                                            If (LEqual (_T_0, 0x02))
-                                            {
-                                                Return (SDGV)
-                                            }
-                                        }
-                                    }
-
-                                    Break
-                                }
-                            }
-
-                            Return (Zero)
-                        }
                     }
 
                     Device (PR16)
@@ -6601,63 +5384,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         }
 
                         Alias (SBV1, SDGV)
-                        Method (_DSM, 4, Serialized)
-                        {
-                            Name (_T_0, Zero)
-                            If (LEqual (Arg0, Buffer (0x10)
-                                    {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
-                                    }))
-                            {
-                                While (One)
-                                {
-                                    Store (ToInteger (Arg2), _T_0)
-                                    If (LEqual (_T_0, Zero))
-                                    {
-                                        If (LEqual (Arg1, One))
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x07
-                                            })
-                                        }
-                                        Else
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x00
-                                            })
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_0, One))
-                                        {
-                                            If (LEqual (SDGV, 0xFF))
-                                            {
-                                                Return (Zero)
-                                            }
-                                            Else
-                                            {
-                                                Return (One)
-                                            }
-                                        }
-                                        Else
-                                        {
-                                            If (LEqual (_T_0, 0x02))
-                                            {
-                                                Return (SDGV)
-                                            }
-                                        }
-                                    }
-
-                                    Break
-                                }
-                            }
-
-                            Return (Zero)
-                        }
                     }
 
                     Device (PR17)
@@ -6697,63 +5423,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         }
 
                         Alias (SBV2, SDGV)
-                        Method (_DSM, 4, Serialized)
-                        {
-                            Name (_T_0, Zero)
-                            If (LEqual (Arg0, Buffer (0x10)
-                                    {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
-                                    }))
-                            {
-                                While (One)
-                                {
-                                    Store (ToInteger (Arg2), _T_0)
-                                    If (LEqual (_T_0, Zero))
-                                    {
-                                        If (LEqual (Arg1, One))
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x07
-                                            })
-                                        }
-                                        Else
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x00
-                                            })
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_0, One))
-                                        {
-                                            If (LEqual (SDGV, 0xFF))
-                                            {
-                                                Return (Zero)
-                                            }
-                                            Else
-                                            {
-                                                Return (One)
-                                            }
-                                        }
-                                        Else
-                                        {
-                                            If (LEqual (_T_0, 0x02))
-                                            {
-                                                Return (SDGV)
-                                            }
-                                        }
-                                    }
-
-                                    Break
-                                }
-                            }
-
-                            Return (Zero)
-                        }
                     }
 
                     Device (PR18)
@@ -6943,63 +5612,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         }
 
                         Alias (SBV1, SDGV)
-                        Method (_DSM, 4, Serialized)
-                        {
-                            Name (_T_0, Zero)
-                            If (LEqual (Arg0, Buffer (0x10)
-                                    {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
-                                    }))
-                            {
-                                While (One)
-                                {
-                                    Store (ToInteger (Arg2), _T_0)
-                                    If (LEqual (_T_0, Zero))
-                                    {
-                                        If (LEqual (Arg1, One))
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x07
-                                            })
-                                        }
-                                        Else
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x00
-                                            })
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_0, One))
-                                        {
-                                            If (LEqual (SDGV, 0xFF))
-                                            {
-                                                Return (Zero)
-                                            }
-                                            Else
-                                            {
-                                                Return (One)
-                                            }
-                                        }
-                                        Else
-                                        {
-                                            If (LEqual (_T_0, 0x02))
-                                            {
-                                                Return (SDGV)
-                                            }
-                                        }
-                                    }
-
-                                    Break
-                                }
-                            }
-
-                            Return (Zero)
-                        }
                     }
 
                     Device (PR13)
@@ -7045,63 +5657,6 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         }
 
                         Alias (SBV2, SDGV)
-                        Method (_DSM, 4, Serialized)
-                        {
-                            Name (_T_0, Zero)
-                            If (LEqual (Arg0, Buffer (0x10)
-                                    {
-                                        /* 0000 */    0x8F, 0x70, 0xFC, 0xA5, 0x75, 0x87, 0xA6, 0x4B, 
-                                        /* 0008 */    0xBD, 0x0C, 0xBA, 0x90, 0xA1, 0xEC, 0x72, 0xF8
-                                    }))
-                            {
-                                While (One)
-                                {
-                                    Store (ToInteger (Arg2), _T_0)
-                                    If (LEqual (_T_0, Zero))
-                                    {
-                                        If (LEqual (Arg1, One))
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x07
-                                            })
-                                        }
-                                        Else
-                                        {
-                                            Return (Buffer (One)
-                                            {
-                                                0x00
-                                            })
-                                        }
-                                    }
-                                    Else
-                                    {
-                                        If (LEqual (_T_0, One))
-                                        {
-                                            If (LEqual (SDGV, 0xFF))
-                                            {
-                                                Return (Zero)
-                                            }
-                                            Else
-                                            {
-                                                Return (One)
-                                            }
-                                        }
-                                        Else
-                                        {
-                                            If (LEqual (_T_0, 0x02))
-                                            {
-                                                Return (SDGV)
-                                            }
-                                        }
-                                    }
-
-                                    Break
-                                }
-                            }
-
-                            Return (Zero)
-                        }
                     }
 
                     Device (PR14)
@@ -9009,6 +7564,35 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                 PMEE,   1, 
                     ,   6, 
                 PMES,   1
+            }
+
+            Method (_DSM, 4, NotSerialized)
+            {
+                If (LEqual (Arg2, Zero))
+                {
+                    Return (Buffer (One)
+                    {
+                        0x03
+                    })
+                }
+
+                Return (Package (0x06)
+                {
+                    "layout-id", 
+                    Buffer (0x04)
+                    {
+                        0x1C, 0x00, 0x00, 0x00
+                    }, 
+
+                    "hda-gfx", 
+                    Buffer (0x0A)
+                    {
+                        "onboard-1"
+                    }, 
+
+                    "PinConfigurations", 
+                    Buffer (Zero) {}
+                })
             }
 
             Method (_PRW, 0, NotSerialized)
@@ -13094,7 +11678,7 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                     {
                         If (LGreaterEqual (MSOS (), OSW8))
                         {
-                            Subtract (0x64, Zero, Local0)
+                            Store (0x64, Local0)
                             ShiftLeft (Local0, 0x08, Local0)
                             Add (Local0, 0x64, Local1)
                         }
@@ -13233,7 +11817,7 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         }
                         Else
                         {
-                            Subtract (0x00010000, 0x0D, Local2)
+                            Store (0xFFF3, Local2)
                             And (Local2, 0xFFFF, Local2)
                             Return (Local2)
                         }
@@ -13250,7 +11834,7 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                         }
                         Else
                         {
-                            Subtract (0x00010000, 0x0D, Local2)
+                            Store (0xFFF3, Local2)
                             And (Local2, 0xFFFF, Local2)
                             Return (Local2)
                         }
@@ -14026,7 +12610,7 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
             {
                 If (LEqual (Arg0, 0x0100))
                 {
-                    Subtract (0x0B, One, Local0)
+                    Store (0x0A, Local0)
                     Return (Local0)
                 }
 
@@ -14935,13 +13519,13 @@ DefinitionBlock ("iASLzv0PLu.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
 
                 If (BLLO)
                 {
-                    ShiftLeft (One, 0x02, Local2)
+                    Store (0x04, Local2)
                     Or (Local0, Local2, Local0)
                 }
 
                 If (And (^^LPCB.EC0.EB0S, 0x08))
                 {
-                    ShiftLeft (One, 0x02, Local2)
+                    Store (0x04, Local2)
                     Or (Local0, Local2, Local0)
                 }
 
