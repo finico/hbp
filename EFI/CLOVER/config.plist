@@ -14,9 +14,15 @@
 			<dict>
 				<key>AddDTGP_0001</key>
 				<true/>
+				<key>FIX_ADP1_800000</key>
+				<true/>
 				<key>FixAirport_4000</key>
 				<true/>
 				<key>FixHDA_8000</key>
+				<true/>
+				<key>FixRegions_10000000</key>
+				<true/>
+				<key>NewWay_80000000</key>
 				<true/>
 			</dict>
 			<key>ReuseFFFF</key>
@@ -35,8 +41,12 @@
 				<string>CpuPm</string>
 			</dict>
 			<dict>
-				<key>#Length</key>
-				<integer>720</integer>
+				<key>Signature</key>
+				<string>SSDT</string>
+				<key>TableId</key>
+				<string>SaSsdt </string>
+			</dict>
+			<dict>
 				<key>Signature</key>
 				<string>SSDT</string>
 				<key>TableId</key>
@@ -45,19 +55,14 @@
 		</array>
 		<key>SSDT</key>
 		<dict>
+			<key>DropOem</key>
+			<false/>
 			<key>EnableC6</key>
 			<true/>
 			<key>EnableC7</key>
 			<true/>
 			<key>Generate</key>
-			<dict>
-				<key>CStates</key>
-				<true/>
-				<key>DoubleFirstState</key>
-				<true/>
-				<key>PStates</key>
-				<true/>
-			</dict>
+			<true/>
 			<key>PluginType</key>
 			<integer>1</integer>
 		</dict>
@@ -65,7 +70,7 @@
 	<key>Boot</key>
 	<dict>
 		<key>Arguments</key>
-		<string>-xcpm nv_disable=1 -gux_defer_usb2 kext-dev-mode=1</string>
+		<string>slide=0 debug=0x100</string>
 		<key>Debug</key>
 		<false/>
 		<key>DefaultVolume</key>
@@ -141,7 +146,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>Yosemite</string>
+		<string>embedded</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
@@ -169,48 +174,6 @@
 		<array>
 			<dict>
 				<key>Comment</key>
-				<string>Second Stage patch 10.10</string>
-				<key>Find</key>
-				<data>
-				AQAAdRc=
-				</data>
-				<key>Name</key>
-				<string>IOGraphicsFamily</string>
-				<key>Replace</key>
-				<data>
-				AQAAdBc=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Disable Intel</string>
-				<key>Find</key>
-				<data>
-				9oDUAAAAgHU0
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				9oDUAAAAgOs0
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Enable Trim on SSD</string>
-				<key>Find</key>
-				<data>
-				QVBQTEUgU1NE
-				</data>
-				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>
-				AAAAAAAAAAAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
 				<string>BCM94352HMB 5GHz Fix</string>
 				<key>Find</key>
 				<data>
@@ -221,146 +184,6 @@
 				<key>Replace</key>
 				<data>
 				AVhY
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>BCM94352HMB whitelist</string>
-				<key>Find</key>
-				<data>
-				axAAAHUN
-				</data>
-				<key>Name</key>
-				<string>AirPortBrcm4360</string>
-				<key>Replace</key>
-				<data>
-				axAAAJCQ
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Enable USB3 after wake for Intel 8</string>
-				<key>Find</key>
-				<data>
-				xoDIAAAAAQ==
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				xoDIAAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Disable XHCI</string>
-				<key>Find</key>
-				<data>
-				QbzHAgDgPQABAAA=
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				QbzHAgDgPQAAAAA=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch MSI 2</string>
-				<key>Find</key>
-				<data>
-				QcdHCAAAQAA=
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				QcdHCAAAAAA=
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Still waiting for root 2</string>
-				<key>Find</key>
-				<data>
-				dA5IjT2lkAAA
-				</data>
-				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>
-				v8gAAACQkJCQ
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Disable ECC Memory in MacPro SMBIOS</string>
-				<key>Find</key>
-				<data>
-				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
-				</data>
-				<key>Name</key>
-				<string>AppleTyMCEDriver</string>
-				<key>Replace</key>
-				<data>
-				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Enable PCI power management</string>
-				<key>Find</key>
-				<data>
-				dU1Ii7voAQAA
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				601Ii7voAQAA
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch MSI 1</string>
-				<key>Find</key>
-				<data>
-				gUkIAABAAA==
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				gUkIAAAAAA==
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Still waiting for root 1</string>
-				<key>Find</key>
-				<data>
-				60wAAOoD
-				</data>
-				<key>Name</key>
-				<string>IOAHCIBlockStorage</string>
-				<key>Replace</key>
-				<data>
-				60wAAOgB
-				</data>
-			</dict>
-			<dict>
-				<key>Comment</key>
-				<string>Patch MSI 3</string>
-				<key>Find</key>
-				<data>
-				QcdHCAAAQAA=
-				</data>
-				<key>Name</key>
-				<string>AppleUSBXHCI</string>
-				<key>Replace</key>
-				<data>
-				QcdHCAAAAAA=
 				</data>
 			</dict>
 			<dict>
@@ -385,6 +208,104 @@
 			</dict>
 			<dict>
 				<key>Comment</key>
+				<string>Disable XHCI</string>
+				<key>Find</key>
+				<data>
+				QbzHAgDgPQABAAA=
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				QbzHAgDgPQAAAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Enable PCI power management</string>
+				<key>Find</key>
+				<data>
+				dU1Ii7voAQAA
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				601Ii7voAQAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Enable Trim on SSD</string>
+				<key>Find</key>
+				<data>
+				QVBQTEUgU1NE
+				</data>
+				<key>Name</key>
+				<string>IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>
+				AAAAAAAAAAAA
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Still waiting for root 2</string>
+				<key>Find</key>
+				<data>
+				dA5IjT2lkAAA
+				</data>
+				<key>Name</key>
+				<string>IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>
+				v8gAAACQkJCQ
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>BCM94352HMB whitelist</string>
+				<key>Find</key>
+				<data>
+				axAAAHUN
+				</data>
+				<key>Name</key>
+				<string>AirPortBrcm4360</string>
+				<key>Replace</key>
+				<data>
+				axAAAJCQ
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable ECC Memory in MacPro SMBIOS</string>
+				<key>Find</key>
+				<data>
+				cgoATWFjUHJvNCwxAE1hY1BybzUsMQBY
+				</data>
+				<key>Name</key>
+				<string>AppleTyMCEDriver</string>
+				<key>Replace</key>
+				<data>
+				cgoAAAAAAAAAAAAAAAAAAAAAAAAAAABY
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch MSI 1</string>
+				<key>Find</key>
+				<data>
+				gUkIAABAAA==
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				gUkIAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
 				<string>Handoff Fix</string>
 				<key>Find</key>
 				<data>
@@ -395,6 +316,90 @@
 				<key>Replace</key>
 				<data>
 				Qb4PAAAA61k=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Disable Intel</string>
+				<key>Find</key>
+				<data>
+				9oDUAAAAgHU0
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				9oDUAAAAgOs0
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Enable USB3 after wake for Intel 8</string>
+				<key>Find</key>
+				<data>
+				xoDIAAAAAQ==
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				xoDIAAAAAA==
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch MSI 2</string>
+				<key>Find</key>
+				<data>
+				QcdHCAAAQAA=
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				QcdHCAAAAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Patch MSI 3</string>
+				<key>Find</key>
+				<data>
+				QcdHCAAAQAA=
+				</data>
+				<key>Name</key>
+				<string>AppleUSBXHCI</string>
+				<key>Replace</key>
+				<data>
+				QcdHCAAAAAA=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Second Stage patch 10.10</string>
+				<key>Find</key>
+				<data>
+				AQAAdRc=
+				</data>
+				<key>Name</key>
+				<string>IOGraphicsFamily</string>
+				<key>Replace</key>
+				<data>
+				AQAAdBc=
+				</data>
+			</dict>
+			<dict>
+				<key>Comment</key>
+				<string>Still waiting for root 1</string>
+				<key>Find</key>
+				<data>
+				60wAAOoD
+				</data>
+				<key>Name</key>
+				<string>IOAHCIBlockStorage</string>
+				<key>Replace</key>
+				<data>
+				60wAAOgB
 				</data>
 			</dict>
 		</array>
@@ -418,7 +423,7 @@
 		<key>ChassisManufacturer</key>
 		<string>Apple Inc.</string>
 		<key>ChassisType</key>
-		<string>8</string>
+		<string>08</string>
 		<key>Family</key>
 		<string>MacBook Pro</string>
 		<key>Manufacturer</key>
@@ -430,7 +435,7 @@
 		<key>SerialNumber</key>
 		<string></string>
 		<key>Trust</key>
-		<true/>
+		<false/>
 		<key>Version</key>
 		<string>1.0</string>
 	</dict>
