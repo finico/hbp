@@ -25,6 +25,21 @@
 				<key>NewWay_80000000</key>
 				<true/>
 			</dict>
+			<key>Patches</key>
+			<array>
+				<dict>
+					<key>Comment</key>
+					<string>Rename GFX0 to IGPU</string>
+					<key>Find</key>
+					<data>
+					R0ZYMA==
+					</data>
+					<key>Replace</key>
+					<data>
+					SUdQVQ==
+					</data>
+				</dict>
+			</array>
 			<key>ReuseFFFF</key>
 			<false/>
 		</dict>
@@ -146,7 +161,7 @@
 			<true/>
 		</dict>
 		<key>Theme</key>
-		<string>embedded</string>
+		<string>bluemac</string>
 	</dict>
 	<key>Graphics</key>
 	<dict>
