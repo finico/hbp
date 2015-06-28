@@ -17,11 +17,11 @@
 	<key>CFBundlePackageType</key>
 	<string>KEXT</string>
 	<key>CFBundleShortVersionString</key>
-	<string>4.3</string>
+	<string>4.4</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>4.3</string>
+	<string>4.4</string>
 	<key>DTCompiler</key>
 	<string>com.apple.compilers.llvm.clang.1_0</string>
 	<key>DTPlatformBuild</key>
@@ -881,7 +881,7 @@
 					<key>FingerPressDrag</key>
 					<true/>
 					<key>FingerPressDragPressure</key>
-					<integer>0</integer>
+					<integer>255</integer>
 					<key>FingerPressDragTimeOut</key>
 					<integer>1200</integer>
 				</dict>
@@ -929,14 +929,20 @@
 					<integer>10</integer>
 					<key>PalmDetection</key>
 					<false/>
-					<key>PinchDelta</key>
-					<integer>300</integer>
+					<key>PinchDeltaScale</key>
+					<integer>3</integer>
+					<key>PinchRotateMinSamples</key>
+					<integer>3</integer>
 					<key>PinchZoom</key>
 					<true/>
+					<key>PinchZoomDelta</key>
+					<integer>300</integer>
 					<key>Rotation</key>
 					<true/>
 					<key>RotationDelta</key>
 					<integer>350</integer>
+					<key>RotationMaxCFDelta</key>
+					<integer>85</integer>
 				</dict>
 				<key>Pointer</key>
 				<dict>
@@ -947,7 +953,7 @@
 					<key>DisableTrackPointButton</key>
 					<false/>
 					<key>PointerCustomAcceleration</key>
-					<integer>7</integer>
+					<integer>19</integer>
 					<key>PointerResolution</key>
 					<integer>1600</integer>
 					<key>PointerSmoothSamples</key>
@@ -961,12 +967,14 @@
 					<false/>
 					<key>AutoEdgeScroll</key>
 					<false/>
-					<key>CircularEdgeScroll</key>
-					<false/>
 					<key>Continuous2FingScroll</key>
 					<true/>
 					<key>ContinuousEdgeScroll</key>
+					<true/>
+					<key>EdgeCircularScroll</key>
 					<false/>
+					<key>EdgeCircularScrollDelta</key>
+					<integer>10</integer>
 					<key>EdgeHScrollArea</key>
 					<integer>8</integer>
 					<key>EdgeScrollAccelMode</key>
@@ -989,19 +997,27 @@
 					<integer>1</integer>
 					<key>ScrollLevelGranularity</key>
 					<integer>70</integer>
+					<key>ScrollMaxIdleDetectTimeout</key>
+					<integer>500</integer>
+					<key>ScrollMaxIdleStateDelta</key>
+					<integer>10</integer>
 					<key>ScrollSmoothSamples</key>
-					<integer>5</integer>
+					<integer>3</integer>
+					<key>ScrollStopDetectSamples</key>
+					<integer>3</integer>
 					<key>Sling2FingScroll</key>
 					<false/>
 					<key>SlingEdgeScroll</key>
-					<true/>
+					<false/>
 					<key>SlingScrollStartTimeOut</key>
-					<integer>500</integer>
+					<integer>800</integer>
 					<key>SlingTriggerArea</key>
-					<integer>18</integer>
-					<key>SlowScrollFilterValue</key>
-					<integer>5</integer>
+					<integer>15</integer>
+					<key>SlowScrollFilterMaxDelta</key>
+					<integer>25</integer>
 				</dict>
+				<key>SleepWakeUpDelay</key>
+				<integer>1500</integer>
 				<key>Swiping</key>
 				<dict>
 					<key>3FingerSwipeDownAction</key>
@@ -1035,7 +1051,7 @@
 					<key>EdgeSwipeDetectVArea</key>
 					<integer>5</integer>
 					<key>EdgeSwipeFingers</key>
-					<integer>2</integer>
+					<integer>0</integer>
 					<key>EdgeSwipeLeft</key>
 					<integer>6</integer>
 					<key>EdgeSwipeRight</key>
@@ -1049,14 +1065,14 @@
 					<key>EdgeSwipesResetPointer</key>
 					<false/>
 					<key>MultiFingerSwipesDeltaX</key>
-					<integer>150</integer>
+					<integer>200</integer>
 					<key>MultiFingerSwipesDeltaY</key>
-					<integer>150</integer>
+					<integer>200</integer>
 				</dict>
 				<key>Tapping</key>
 				<dict>
 					<key>1FTapPressure</key>
-					<integer>0</integer>
+					<integer>255</integer>
 					<key>4FingersTapAction</key>
 					<integer>4</integer>
 					<key>5FingersTapAction</key>
@@ -1071,6 +1087,8 @@
 					<false/>
 					<key>MulFingDoubleTaps</key>
 					<false/>
+					<key>MulFingTapMaxDelta</key>
+					<integer>45</integer>
 					<key>MulFingTapTimeOut</key>
 					<integer>180</integer>
 					<key>TapMaxDelta</key>
@@ -1102,9 +1120,9 @@
 		<key>com.apple.kpi.mach</key>
 		<string>9.0.0</string>
 		<key>org.emlydinesh.driver.ApplePS2Controller</key>
-		<string>4.3</string>
+		<string>4.4</string>
 		<key>org.emlydinesh.driver.ApplePS2Keyboard</key>
-		<string>4.3</string>
+		<string>4.4</string>
 	</dict>
 	<key>OSBundleRequired</key>
 	<string>Safe Boot</string>
