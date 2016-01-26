@@ -16326,7 +16326,7 @@ DefinitionBlock ("DSDT.aml", "DSDT", 2, "_ASUS_", "Notebook", 0x00000012)
                     }
                     Else
                     {
-                        Store (One, Local0)
+                        Store (Zero, Local0)
                     }
                 }
                 Else
